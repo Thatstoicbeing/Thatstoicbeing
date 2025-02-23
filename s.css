@@ -1,0 +1,96 @@
+/* Variables */
+:root {
+    --neon-cyan: #0ff;
+    --neon-pink: #f0f;
+    --neon-blue: #08f;
+    --bg-dark: #0a0a0a;
+    --bg-light: #f5f5f5;
+    --text-dark: #fff;
+    --text-light: #333;
+    --transition-speed: 0.3s;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: var(--transition-speed) all;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+/* Neon Effects */
+.neon-text {
+    text-shadow: 0 0 5px var(--neon-cyan),
+                 0 0 10px var(--neon-cyan),
+                 0 0 20px var(--neon-cyan);
+}
+
+.neon-border {
+    border: 2px solid var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    background: var(--bg-dark);
+    z-index: 1000;
+}
+
+section {
+    padding: 6rem 2rem;
+    border-bottom: 2px solid var(--neon-blue);
+}
+
+/* Responsive Grids */
+.skills-grid, .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px var(--neon-cyan); }
+    50% { box-shadow: 0 0 20px var(--neon-cyan); }
+    100% { box-shadow: 0 0 5px var(--neon-cyan); }
+}
+
+.project-card:hover {
+    animation: glow 1.5s infinite;
+}
+
+/* Light Mode */
+body.light-mode {
+    background: var(--bg-light);
+    color: var(--text-light);
+}
+
+body.light-mode .neon-text {
+    text-shadow: 0 0 5px var(--neon-pink),
+                 0 0 10px var(--neon-pink),
+                 0 0 20px var(--neon-pink);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    .skills-grid, .project-grid {
+        grid-template-columns: 1fr;
+    }
+}

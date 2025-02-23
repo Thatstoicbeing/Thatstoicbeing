@@ -1,0 +1,965 @@
+/* =======================
+   Color Variables & Transitions
+   ======================= */
+   :root {
+    --neon-primary: #0ff;
+    --neon-accent: #ff00ff;
+    --bg-dark: #121212;
+    --bg-light: #f0f0f0;
+    --text-dark: #ffffff;
+    --text-light: #333333;
+    --transition-speed: 0.5s;
+  }
+  
+  /* =======================
+     Global Styles
+     ======================= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+  }
+  
+  /* Default Light Mode */
+  body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  
+  /* =======================
+     Navbar Styles
+     ======================= */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+  }
+  
+  .logo a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--neon-primary);
+    text-shadow: 0 0 5px var(--neon-primary);
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--neon-primary);
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--neon-accent);
+  }
+  
+  /* Mode Toggle Button */
+  #modeToggle {
+    background: transparent;
+    border: 2px solid var(--neon-primary);
+    padding: 0.5rem 1rem;
+    color: var(--neon-primary);
+    cursor: pointer;
+    transition: background var(--transition-speed);
+  }
+  
+  #modeToggle:hover {
+    background: var(--neon-primary);
+    color: var(--bg-dark);
+  }
+  
+  /* =======================
+     Hero Section
+     ======================= */
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--neon-primary);
+    animation: neonGlow 1.5s infinite alternate;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+  
+  /* =======================
+     Section Layout
+     ======================= */
+  .section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--neon-accent);
+  }
+  
+ /* =======================
+   Neon Color Palette & Variables
+   ======================= */
+:root {
+  --neon-primary: #0ff;
+  --neon-accent: #ff00ff;
+  --bg-dark: #121212;
+  --bg-light: #f0f0f0;
+  --text-dark: #ffffff;
+  --text-light: #333333;
+  --transition-speed: 0.5s;
+}
+
+/* =======================
+   Neon Color Palette & Variables
+   ======================= */
+   :root {
+    --neon-primary: #0ff;
+    --neon-accent: #ff00ff;
+    --bg-dark: #121212;
+    --bg-light: #f0f0f0;
+    --text-dark: #ffffff;
+    --text-light: #333333;
+    --transition-speed: 0.5s;
+  }
+  
+  /* =======================
+     Skills Section Base Styles
+     ======================= */
+  .skills-section {
+    padding: 2rem;
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .skills-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--neon-accent);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* =======================
+     Skill Card Styles
+     ======================= */
+  .skill-card {
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--neon-primary);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 300px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    cursor: pointer;
+  }
+  
+  .skill-card:hover,
+  .skill-card:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--neon-primary);
+    outline: none;
+  }
+  
+  .skill-card h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--neon-primary);
+  }
+  
+  .skill-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skill-card li {
+    margin-bottom: 1.5rem;
+  }
+  
+  .skill-card li span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+  }
+  
+  /* =======================
+     Progress Bar Styles
+     ======================= */
+  .progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 10px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .progress-fill {
+    background: var(--neon-primary);
+    height: 100%;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+  
+  /* =======================
+     Chart Button Styles
+     ======================= */
+  .chart-btn {
+    background: var(--neon-primary);
+    color: var(--bg-dark);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .chart-btn:hover,
+  .chart-btn:focus {
+    background: var(--neon-accent);
+    outline: none;
+  }
+  
+  /* =======================
+     Chart Modal Styles
+     ======================= */
+  .chart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .chart-modal.active {
+    display: flex;
+  }
+  
+  .chart-content {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  #closeChart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--neon-primary);
+    color: var(--bg-dark);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* =======================
+     Animations & Transitions
+     ======================= */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* =======================
+     Responsive Design
+     ======================= */
+  @media (max-width: 768px) {
+    .skills-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .skill-card {
+      width: 90%;
+    }
+  }
+  
+
+  /* =======================
+     Cards: Projects & Education
+     ======================= */
+  /* =======================
+   Neon Color Palette & Variables
+   ======================= */
+:root {
+  --neon-primary: #0ff;
+  --neon-accent: #ff00ff;
+  --bg-dark: #121212;
+  --bg-light: #f0f0f0;
+  --text-dark: #ffffff;
+  --text-light: #333333;
+  --transition-speed: 0.5s;
+}
+
+/* =======================
+   Projects Section Base Styles
+   ======================= */
+.projects-section {
+  padding: 2rem 1rem;
+  background: transparent;
+  color: var(--text-light);
+}
+
+.projects-section header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  color: var(--neon-primary);
+  text-shadow: 0 0 5px var(--neon-primary);
+}
+
+.projects-section p {
+  font-size: 1.2rem;
+}
+
+/* =======================
+   Projects Grid Layout
+   ======================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* =======================
+   Project Card Styles
+   ======================= */
+.project-card {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--neon-primary);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  overflow: hidden;
+  position: relative;
+  animation: fadeInSlide 1s ease-out;
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--neon-primary);
+  outline: none;
+}
+
+.project-card h3 {
+  margin-bottom: 0.75rem;
+  color: var(--neon-primary);
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Tech stack styling */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-stack span {
+  background: var(--neon-primary);
+  color: var(--bg-dark);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* Project links styling */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  text-decoration: none;
+  background: var(--neon-primary);
+  color: var(--bg-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background var(--transition-speed);
+}
+
+.project-links a:hover,
+.project-links a:focus {
+  background: var(--neon-accent);
+  outline: none;
+}
+
+/* Details button styling */
+.details-btn {
+  background: var(--neon-primary);
+  color: var(--bg-dark);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+}
+
+.details-btn:hover,
+.details-btn:focus {
+  background: var(--neon-accent);
+  outline: none;
+}
+
+/* =======================
+   Animations & Transitions
+   ======================= */
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   Modal Styles
+   ======================= */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--bg-light);
+  color: var(--text-light);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  animation: fadeInSlide 0.8s ease-out;
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--neon-primary);
+  border: none;
+  color: var(--bg-dark);
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: background var(--transition-speed);
+}
+
+#closeModal:hover,
+#closeModal:focus {
+  background: var(--neon-accent);
+  outline: none;
+}
+
+  
+  /* =======================
+   Neon Color Palette & Variables
+   ======================= */
+:root {
+  --neon-primary: #0ff;
+  --neon-accent: #ff00ff;
+  --bg-dark: #121212;
+  --bg-light: #f0f0f0;
+  --text-dark: #ffffff;
+  --text-light: #333333;
+  --transition-speed: 0.5s;
+}
+
+/* =======================
+   Certifications & Education Section Base Styles
+   ======================= */
+#certifications-education {
+  padding: 2rem;
+  background: transparent;
+  color: var(--text-light);
+  font-family: Arial, sans-serif;
+}
+
+.certifications, .education {
+  margin-bottom: 2rem;
+}
+
+.certifications h2,
+.education h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--neon-primary);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px var(--neon-primary);
+}
+
+/* =======================
+   Card Grid Layout
+   ======================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* =======================
+   Card Styles
+   ======================= */
+.card {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--neon-primary);
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  overflow: hidden;
+  animation: fadeInSlide 1s ease-out;
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--neon-primary);
+  outline: none;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--neon-primary);
+}
+
+.issuer,
+.institution,
+.date,
+.duration {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =======================
+   Expandable Details Styling
+   ======================= */
+.card-details {
+  margin-top: 0.5rem;
+}
+
+.card-details summary {
+  cursor: pointer;
+  color: var(--neon-accent);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-details p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+}
+
+/* =======================
+   Card Logo/Icon Styling
+   ======================= */
+.card-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* =======================
+   Animations & Transitions
+   ======================= */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =======================
+   Responsive Design
+   ======================= */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+  
+  /* =======================
+     Contact Form
+     ======================= */
+  #contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  #contactForm input,
+  #contactForm textarea {
+    padding: 0.75rem;
+    border: 2px solid var(--neon-primary);
+    border-radius: 4px;
+    background: transparent;
+    transition: border 0.3s;
+  }
+  
+  #contactForm input:focus,
+  #contactForm textarea:focus {
+    border-color: var(--neon-accent);
+  }
+  
+  #contactForm button {
+    padding: 0.75rem;
+    background: var(--neon-primary);
+    border: none;
+    color: var(--bg-dark);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  #contactForm button:hover {
+    background: var(--neon-accent);
+  }
+  
+  /* =======================
+     Social Links & Footer
+     ======================= */
+  .social-links {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  .social-links a {
+    text-decoration: none;
+    margin: 0 0.5rem;
+    color: var(--neon-primary);
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: var(--neon-accent);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* =======================
+     Particle Background Canvas
+     ======================= */
+  #particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  /* =======================
+     Neon Glow Animation
+     ======================= */
+  @keyframes neonGlow {
+    0% {
+      text-shadow: 0 0 5px var(--neon-primary), 0 0 10px var(--neon-primary);
+    }
+    100% {
+      text-shadow: 0 0 20px var(--neon-primary), 0 0 30px var(--neon-primary);
+    }
+  }
+  
+  /* =======================
+     Responsive Media Queries
+     ======================= */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+  }
+  /* =======================
+   Neon Color Palette & Variables
+   ======================= */
+:root {
+  --neon-primary: #0ff;
+  --neon-accent: #ff00ff;
+  --bg-dark: #121212;
+  --bg-light: #f0f0f0;
+  --text-dark: #ffffff;
+  --text-light: #333333;
+  --transition-speed: 0.5s;
+}
+
+/* =======================
+   About Section Base Styles
+   ======================= */
+.about-section {
+  padding: 3rem 1.5rem;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Start hidden for scroll-triggered fade-in */
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* =======================
+   Text Content Styling
+   ======================= */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  color: var(--text-dark);
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: var(--neon-primary);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px var(--neon-primary);
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  color: var(--neon-accent);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+  color: var(--neon-primary);
+  outline: none;
+}
+
+/* =======================
+   CTA Button Styling
+   ======================= */
+.cta-btn {
+  background: var(--neon-primary);
+  border: none;
+  color: var(--bg-dark);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  background: var(--neon-accent);
+  outline: none;
+}
+
+/* =======================
+   Image Styling
+   ======================= */
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border: 3px solid var(--neon-primary);
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--neon-primary);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover,
+.about-image img:focus {
+  transform: scale(1.05);
+}
+
+/* =======================
+   Responsive Design
+   ======================= */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-text,
+  .about-image {
+    text-align: center;
+  }
+}
+:root {
+  --neon-primary: #0ff;
+  --neon-accent: #ff00ff;
+  --text-dark: #ffffff;
+  --text-light: #333333;
+  --transition-speed: 0.5s;
+}
+
+/* Container for the heading */
+.skills-heading-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Skills heading styling */
+.skills-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--neon-primary);
+  text-shadow: 0 0 5px var(--neon-primary), 0 0 10px var(--neon-primary);
+  animation: neonGlow 1.5s infinite alternate, fadeInSlide 1s ease-out;
+  transition: transform var(--transition-speed), color var(--transition-speed);
+}
+
+/* Hover & focus effects */
+.skills-heading:hover,
+.skills-heading:focus {
+  transform: scale(1.05);
+  color: var(--neon-accent);
+  outline: none;
+}
+
+/* Neon glow animation */
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px var(--neon-primary), 0 0 10px var(--neon-primary);
+  }
+  to {
+    text-shadow: 0 0 20px var(--neon-primary), 0 0 30px var(--neon-primary);
+  }
+}
+
+/* Fade in & slide in animation */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 2.5rem;
+  }
+}
